@@ -1,6 +1,6 @@
 package Participant;
 
-public class Participant implements IParticipant
+public class ParticipantData implements IParticipant
 {
     private String name;
     private int seed;
@@ -8,7 +8,7 @@ public class Participant implements IParticipant
 
     private int currentOpponentSeed;
 
-    public Participant ()
+    public ParticipantData()
     {
         this.name = "default";
         this.seed = -1;
@@ -17,16 +17,16 @@ public class Participant implements IParticipant
         this.currentOpponentSeed = -1;
     }
 
-    public Participant(String name, int seed, int currentOpponentSeed)
+    public ParticipantData(String name, int seed, int currentOpponentSeed)
     {
         this.name = name;
         this.seed = seed;
         this.round = 1;
 
-        currentOpponentSeed = currentOpponentSeed;
+        this.currentOpponentSeed = currentOpponentSeed;
     }
 
-    public Participant(Participant copy)
+    public ParticipantData(ParticipantData copy)
     {
         this.name = copy.getName();
         this.seed = copy.getSeed();

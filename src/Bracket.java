@@ -1,11 +1,10 @@
-import Participant.Participant;
+import Participant.ParticipantData;
 
 public class Bracket
 {
-    private Participant[] participantList;
+    private ParticipantData[] participantList;
     private int rounds;
     private int games;
-    private int amountOfTeams;
 
     public Bracket()
     {
@@ -13,29 +12,60 @@ public class Bracket
         this.games = -1;
         this.amountOfTeams = -1;
 
-        participantList = new Participant[0];
+        participantList = new ParticipantData[0];
     }
 
-    public Bracket(Participant[] partList)
+    public Bracket(ParticipantData[] partList, int rounds)
     {
         this.participantList = partList;
 
         this.amountOfTeams = partList.length;
 
-        this.rounds = determineRounds(this.amountOfTeams);
-
+        this.rounds = rounds;
     }
-    private int determineRounds(int amountOfTeams)
+
+    public ParticipantData[] getParticipantList()
     {
-        if (amountOfTeams == 0)
-            return 0;
-        else if (amountOfTeams <= 2)
-            return 1;
-        else if (amountOfTeams <= 4)
-            return 2;
-        else if (amountOfTeams <= 8)
-            return 3;
-
-        return 0;
+        return participantList;
     }
+
+    public void setParticipantList(ParticipantData[] participantList)
+    {
+        this.participantList = participantList;
+    }
+
+    public int getRounds()
+    {
+        return rounds;
+    }
+
+    public void setRounds(int rounds)
+    {
+        this.rounds = rounds;
+    }
+
+    public int getGames()
+    {
+        return games;
+    }
+
+    public void setGames(int games)
+    {
+        this.games = games;
+    }
+
+    public int getAmountOfTeams()
+    {
+        return amountOfTeams;
+    }
+
+    public void setAmountOfTeams(int amountOfTeams)
+    {
+        this.amountOfTeams = amountOfTeams;
+    }
+
+    private int amountOfTeams;
+
+
+
 }
